@@ -2,6 +2,11 @@ all: compile_latex clean
 
 .PHONY: all clean install_latex install
 
+current:
+	pdflatex -shell-escape 02.teorica___introduccion_a_CUDA.tex
+	biber 02.teorica___introduccion_a_CUDA
+	pdflatex -shell-escape 02.teorica___introduccion_a_CUDA.tex
+
 compile_latex:
 	@for file in *.tex; \
 		do \
